@@ -4,7 +4,7 @@ const sidebarConf = require('../config/sidebarConf');
 module.exports = {
   title: '小鲸鱼的前端日志',
   description: 'jy',
-  
+
   locales: {
     '/': {
       lang: 'zh-CN'
@@ -13,7 +13,10 @@ module.exports = {
   // 注入到当前页面的 HTML <head> 中的标签
   head: [
     // 增加一个自定义的 favicon(网页标签的图标)
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['link', {
+      rel: 'icon',
+      href: '/favicon.ico'
+    }],
   ],
   // 部署到github相关的配置
   base: '/jy/',
@@ -73,7 +76,7 @@ module.exports = {
 
     // 默认为 "Edit this page"
     editLinkText: '在 GitHub 上编辑此页',
-    
+
     // 启用页面滚动效果
     smoothScroll: true,
 
@@ -86,5 +89,14 @@ module.exports = {
 
   // 插件
   plugins: [
+    ['vuepress-plugin-comment', {
+      choosen: 'valine',
+      options: {
+        el: '#valine-vuepress-comment',
+        appId: '',
+        appKey: '',
+        placeholder: '请添加你的评论'
+      }
+    }]
   ],
 };
