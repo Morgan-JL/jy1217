@@ -4,8 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "deploy": "bash deploy.sh",
+    "main": "bash main.sh",
+    "build": "node ./builds/addComponents.js && vuepress build docs && node ./builds/delComponents.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Morgan-JL/jy1217.git"
   },
   "keywords": [],
   "author": "",
